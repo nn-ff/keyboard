@@ -5,7 +5,7 @@ const RepairHeader = ({ isHovering }) => {
   return (
     <div className={hoverclass}>
       <div>
-        <img src="https://www.wikihow.com/images/thumb/4/4a/Reattach-a-Keyboard-Key-Step-1.jpg/v4-460px-Reattach-a-Keyboard-Key-Step-1.jpg"></img>
+        <img src="https://www.overclockers.ua/peripheral/varmilo-ma108-panda/19-big-varmilo-ma108-panda.jpg"></img>
       </div>
       <div>
         <div>Ремонт клавиатуры</div>
