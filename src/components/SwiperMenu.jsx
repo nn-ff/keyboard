@@ -4,21 +4,28 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 
-import { Pagination, Navigation } from 'swiper';
+import { Pagination, Navigation, Autoplay } from 'swiper';
 
 const SwiperMenu = () => {
   return (
     <div className="swiper_container">
       <Swiper
         slidesPerView={1}
-        spaceBetween={30}
+        spaceBetween={0}
         loop={true}
+        autoplay={{
+          delay: 5000,
+          true: true,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        speed={1500}
         pagination={{
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper">
+        modules={[Pagination, Navigation, Autoplay]}
+        className="swiper_container">
         <SwiperSlide>
           <img src="https://www.overclockers.ua/peripheral/varmilo-ma108-panda/18-big-varmilo-ma108-panda.jpg" />
         </SwiperSlide>
