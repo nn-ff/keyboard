@@ -90,3 +90,80 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 .swiper-pagination {
   margin-bottom: 25px;
 }
+
+.swiper_container_bottom {
+  margin-left: 120px;
+  margin-right: 120px;
+  height: 400px;
+  margin-top: 50px;
+  .swiper_slider {
+    
+    
+    a {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 100px;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      align-items: center;
+      margin-left: 25px;
+      margin-right: 20px;
+      height: 100%;
+      padding: 15px;
+      transition: opacity 200ms ease;
+      img {
+        object-fit: contain;
+        width: 100%;
+        
+
+      }
+      &:hover {
+          opacity: 0.7;
+        }
+    }
+
+    .swiper {
+      border: 1px solid rgba(34, 34, 34, 0.315);
+    border-radius: 30px;
+    &:after {
+      content: '';
+      width: 2px;
+      height: 100%;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+  }
+    .swiper-slide {
+      border-right: 1px solid rgba(34, 34, 34, 0.315) ;
+      
+    }
+    }
+  }
+  .show_brands {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 255px;
+    padding: 5px;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 20px;
+    border: 1px solid rgba(67, 65, 65, 0.44);
+    border-radius: 25px;
+    transition: all 300ms ease;
+    user-select: none;
+    height: auto;
+    &:hover {
+      background-color: rgba(222, 219, 219, 0.622);
+    }
+  }
+}
+
+.swiper-slider-next {
+  width: 50px;
+  height: 50px;
+  background-color: teal;
+  z-index: 55;
+}

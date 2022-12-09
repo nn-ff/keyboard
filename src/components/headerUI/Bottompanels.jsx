@@ -12,7 +12,7 @@ const Bottompanels = ({ handleMouseOver }) => {
       id: '1',
     },
     {
-      title: 'Аксесуары',
+      title: 'Аксессуары',
       id: '2',
     },
     {
