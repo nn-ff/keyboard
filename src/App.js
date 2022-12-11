@@ -1,6 +1,8 @@
 import React from 'react';
 import Allitems from './components/Allitems';
+import Footer from './components/Footer';
 import Header from './components/Header';
+import NewAndPopular from './components/NewAndPopular';
 import Newsitem from './components/Newsitem';
 import SmenuBottom from './components/SmenuBottom';
 import SwiperMenu from './components/SwiperMenu';
@@ -14,6 +16,8 @@ function App() {
       <Newsitem />
       <Allitems />
       <SmenuBottom />
+      <NewAndPopular />
+      <Footer />
     </div>
   );
 }

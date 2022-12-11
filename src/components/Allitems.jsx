@@ -6,16 +6,32 @@ const Allitems = () => {
   const miceall = ['Беспроводные мышки', 'Проводные мышки', 'Logitech', 'Все мышки'];
   const detalisall = ['Переключатели', 'Стабилизаторы'];
   const board = boardall.map((arr) => {
-    return <div className="keyboards_items_item">{arr}</div>;
+    return (
+      <div className="keyboards_items_item" key={arr}>
+        {arr}
+      </div>
+    );
   });
   const accesories = accesoriesall.map((arr) => {
-    return <div className="keyboards_accesories_item">{arr}</div>;
+    return (
+      <div className="keyboards_accesories_item" key={arr}>
+        {arr}
+      </div>
+    );
   });
   const mice = miceall.map((arr) => {
-    return <div className="mice_items_item">{arr}</div>;
+    return (
+      <div className="mice_items_item" key={arr}>
+        {arr}
+      </div>
+    );
   });
   const detail = detalisall.map((arr) => {
-    return <div className="details_items_item">{arr}</div>;
+    return (
+      <div className="details_items_item" key={arr}>
+        {arr}
+      </div>
+    );
   });
   return (
     <div className="allitems_container">

@@ -1,0 +1,108 @@
+.container_new_popular {
+  
+  background-color: rgb(242, 236, 236);
+  border-radius: 40px;
+  height: 1100px;
+}
+
+.product_cards_container_new {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 26px;
+  grid-row-gap: 25px;
+  padding-top: 25px;
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-bottom: 25px;
+  .product_card {
+    background-color: white;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .stock_button {
+      font-size: 17px;
+      font-weight: 500;
+      margin-left: 17px;
+      margin-top: 17px;
+      background-color: rgb(73 168 73);
+      align-self: flex-start;
+      padding: 5px 10px;
+      color: white;
+      border-radius: 20px;
+    }
+    .product_title {
+      margin-left: 25px;
+      font-size: 27px;
+      font-weight: 600;
+    }
+    .product_img {
+      width: 100%;
+      height: 100%;
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+    .product_price {
+      margin-left: 25px;
+      margin-top: auto;
+      margin-bottom: 15px;
+      color: rgb(83, 83, 179);
+      
+    }
+  }
+  }
+
+  .product_card_info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: black;
+    border-radius: 40px;
+    
+  }
+
+  .buttons_new_popular {
+    display: flex;
+    margin: 0 auto;
+    width: 680px;
+    border-radius: 40px;
+    background-color: white;
+    padding: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    
+    div {
+      padding: 8px 12px;
+      &.active {
+      background-color: #0083f1;
+      color: white;
+      border-radius: 15px;
+      
+      box-shadow: 0 1.2px 1.9px -1px rgba(0, 0, 0, 0.014), 0 3.3px 5.3px -1px rgba(0, 0, 0, 0.038), 0 8.5px 12.7px -1px rgba(0, 0, 0, 0.085), 0 30px 42px -1px rgba(0, 0, 0, 0.15)
+      }
+    }
+    
+  }
+
+  .item_animation-enter {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  .item_animation-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 500ms ease-in;
+  }
+  .item_animation-exit {
+    opacity: 0;
+  }
+  .item_animation-exit-active {
+    opacity: 0;
+    transition:  opacity 500ms ease-in;
+  }

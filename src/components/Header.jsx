@@ -18,9 +18,7 @@ const Header = () => {
   const handleMouseOut = () => {
     setIsHovering(false);
   };
-  useEffect(() => {
-    console.log(categoryId);
-  }, [categoryId]);
+
   const hoverclass = isHovering ? 'header_hover_block active' : 'header_hover_block';
 
   return (
