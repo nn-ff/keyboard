@@ -1,11 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-const KeyboardHeader = ({ isHovering }) => {
+const KeyboardHeader = ({ isHovering, onClickLink }) => {
+  const ss = useSelector((state) => state.fetchGlobal.items);
+
   const hoverclass = isHovering ? 'header_bottom_item active' : 'header_bottom_item';
   return (
     <div className={hoverclass}>
       <div>
-        <img src="https://o.aolcdn.com/images/dimse/5845cadfecd996e0372f/bb0950e6c324eae0dcc61b4d2c6c94ee251ef3ac/Y3JvcD0xNjAwJTJDMTA2NyUyQzAlMkMwJnF1YWxpdHk9ODUmZm9ybWF0PWpwZyZyZXNpemU9MTYwMCUyQzEwNjcmaW1hZ2VfdXJpPWh0dHBzJTNBJTJGJTJGcy55aW1nLmNvbSUyRm9zJTJGY3JlYXRyLXVwbG9hZGVkLWltYWdlcyUyRjIwMTktMDklMkY1YmYwODU0MC1kMDE5LTExZTktOWIzZC1lOGY4M2I0YTFlYmEmY2xpZW50PWExYWNhYzNlMWIzMjkwOTE3ZDkyJnNpZ25hdHVyZT05OTkyOGI0YzQzM2YwZGMxN2RlMDE2Y2EyOTE1NGUwYjVlNzM3MDA3"></img>
+        <Link className="imglinks_header" to="/keyboards" onClick={onClickLink}>
+          <div className="linktext">
+            <p>Все клавиатуры</p>
+            <span>&gt;</span>
+          </div>
+          <img
+            className="img_header"
+            src="https://o.aolcdn.com/images/dimse/5845cadfecd996e0372f/bb0950e6c324eae0dcc61b4d2c6c94ee251ef3ac/Y3JvcD0xNjAwJTJDMTA2NyUyQzAlMkMwJnF1YWxpdHk9ODUmZm9ybWF0PWpwZyZyZXNpemU9MTYwMCUyQzEwNjcmaW1hZ2VfdXJpPWh0dHBzJTNBJTJGJTJGcy55aW1nLmNvbSUyRm9zJTJGY3JlYXRyLXVwbG9hZGVkLWltYWdlcyUyRjIwMTktMDklMkY1YmYwODU0MC1kMDE5LTExZTktOWIzZC1lOGY4M2I0YTFlYmEmY2xpZW50PWExYWNhYzNlMWIzMjkwOTE3ZDkyJnNpZ25hdHVyZT05OTkyOGI0YzQzM2YwZGMxN2RlMDE2Y2EyOTE1NGUwYjVlNzM3MDA3"></img>
+        </Link>
       </div>
       <div>
         <div>Особенности</div>
@@ -17,7 +29,18 @@ const KeyboardHeader = ({ isHovering }) => {
         <div>asdasd</div>
       </div>
       <div>Бренды</div>
-      <div>Размер</div>
+      <div>
+        Размер
+        <Link className="header_links" to={`/keyboards/100`}>
+          90%-100% / полноразмерные
+        </Link>
+        <Link className="header_links" to={`/keyboards/80`}>
+          75%-80% / без нампада
+        </Link>
+        <Link className="header_links" to={`/keyboards/60`}>
+          60%-65% / без F-ряда
+        </Link>
+      </div>
     </div>
   );
 };

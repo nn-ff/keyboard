@@ -36,8 +36,8 @@ const SwiperMenu = () => {
   const swiperElements = swiperElementsARR.map((obj, index) => {
     return (
       <SwiperSlide key={obj.title}>
-        <a href={obj.link}>
-          <img src={obj.url} />
+        <a className="swiper_slide_links" href={obj.link}>
+          <img className="swiper_slide_img" src={obj.url} />
         </a>
       </SwiperSlide>
     );

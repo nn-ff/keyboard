@@ -4,6 +4,7 @@ import { fetchProductsNews } from '../redux/slices/itemsSlice';
 import { setNewsPopular } from '../redux/slices/newsAndPopular';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import SwitchesPanel from './SwitchesPanel';
+import ProductCard from './ProductCard';
 
 const NewAndPopular = () => {
   const dispatch = useDispatch();
@@ -24,13 +25,7 @@ const NewAndPopular = () => {
   const product = items.map((obj, id) => {
     return (
       <CSSTransition key={obj.title} timeout={500} classNames="item_animation" unmountOnExit>
-        <div className="product_card" key={obj.title}>
-          <div className="stock_button">В наличии</div>
-          <img className="product_img" src={obj.imageUrl[0]} />
-          <div className="product_title">{obj.title}</div>
-
-          <div className="product_price">{obj.price}р.</div>
-        </div>
+        <ProductCard {...obj} />
       </CSSTransition>
     );
   });

@@ -19,6 +19,10 @@ const Header = () => {
     setIsHovering(false);
   };
 
+  const onClickLink = () => {
+    setIsHovering(false);
+  };
+
   const hoverclass = isHovering ? 'header_hover_block active' : 'header_hover_block';
 
   return (
@@ -26,13 +30,13 @@ const Header = () => {
       <Toppanels />
       <Bottompanels handleMouseOver={handleMouseOver} />
 
-      <div className={hoverclass}>
+      <div className={hoverclass} onClick={onClickLink}>
         <div className={categoryId == 0 ? 'header_item active' : 'header_item'}>
-          <KeyboardHeader isHovering={isHovering} />
+          <KeyboardHeader onClickLink={onClickLink} isHovering={isHovering} />
         </div>
 
         <div className={categoryId == 1 ? 'header_item active' : 'header_item'}>
-          <MouseHeader isHovering={isHovering} />
+          <MouseHeader onClickLink={onClickLink} isHovering={isHovering} />
         </div>
         <div className={categoryId == 2 ? 'header_item active' : 'header_item'}>
           <AccessoriesHeader isHovering={isHovering} />

@@ -2,15 +2,18 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { stringCalculartorNews, stringCalculartorPopular } from '../../utils/catStringCalc';
 
-export const fetchProductsNews = createAsyncThunk('boots/fetchBootsStatus', async (params) => {
-  const { popular, news } = params;
-  const popularString = stringCalculartorPopular(popular);
-  const newsString = stringCalculartorNews(news);
-  const { data } = await axios.get(
-    `https://63264eebba4a9c4753256eee.mockapi.io/items?&${popularString}${newsString}`,
-  );
-  return data;
-});
+export const fetchProductsNews = createAsyncThunk(
+  'products/fetchProductsStatus',
+  async (params) => {
+    const { popular, news } = params;
+    const popularString = stringCalculartorPopular(popular);
+    const newsString = stringCalculartorNews(news);
+    const { data } = await axios.get(
+      `https://63264eebba4a9c4753256eee.mockapi.io/items?&${popularString}${newsString}`,
+    );
+    return data;
+  },
+);
 
 const initialState = {
   items: [],

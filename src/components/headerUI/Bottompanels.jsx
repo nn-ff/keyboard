@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/logoB.png';
 import Bottomitems from './Bottomitems';
+import { Link, useNavigate } from 'react-router-dom';
 const Bottompanels = ({ handleMouseOver }) => {
   const botItemsList = [
     {
@@ -28,7 +29,10 @@ const Bottompanels = ({ handleMouseOver }) => {
     <div className="header_box_bottom">
       <div className="header_bottom">
         <div className="header_bottom_left">
-          <img src={logo} />
+          <Link to="/" style={{ width: 174 }}>
+            <img src={logo} />
+          </Link>
+
           {botItems}
         </div>
         <div className="header_bottom_right">
