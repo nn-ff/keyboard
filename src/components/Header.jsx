@@ -39,10 +39,10 @@ const Header = () => {
           <MouseHeader onClickLink={onClickLink} isHovering={isHovering} />
         </div>
         <div className={categoryId == 2 ? 'header_item active' : 'header_item'}>
-          <AccessoriesHeader isHovering={isHovering} />
+          <AccessoriesHeader isHovering={isHovering} onClickLink={onClickLink} />
         </div>
         <div className={categoryId == 3 ? 'header_item active' : 'header_item'}>
-          <RepairHeader isHovering={isHovering} />
+          <RepairHeader isHovering={isHovering} onClickLink={onClickLink} />
         </div>
       </div>
       {isHovering && <div className="out_block" onMouseOut={handleMouseOut}></div>}

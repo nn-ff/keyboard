@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 
 const KeyboardHeader = ({ isHovering, onClickLink }) => {
-  const ss = useSelector((state) => state.fetchGlobal.items);
-
   const hoverclass = isHovering ? 'header_bottom_item active' : 'header_bottom_item';
   return (
     <div className={hoverclass}>
@@ -21,14 +18,28 @@ const KeyboardHeader = ({ isHovering, onClickLink }) => {
       </div>
       <div>
         <div>Особенности</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
+        <Link className="header_links" to={`/keyboards/wireless`}>
+          Беспроводные
+        </Link>
+        <Link className="header_links" to={`/keyboards/RGB`}>
+          RGB-подсветка
+        </Link>
       </div>
-      <div>Бренды</div>
+      <div>
+        Бренды
+        <Link className="header_links" to={`/keyboards/varmilo`}>
+          Varmilo
+        </Link>
+        <Link className="header_links" to={`/keyboards/leopold`}>
+          Leopold
+        </Link>
+        <Link className="header_links" to={`/keyboards/ducky`}>
+          Ducky
+        </Link>
+        <Link className="header_links" to={`/keyboards/vortex`}>
+          Vortex
+        </Link>
+      </div>
       <div>
         Размер
         <Link className="header_links" to={`/keyboards/100`}>

@@ -4,21 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchAllProducts } from '../redux/slices/fetchAllSlice';
 import ProductCard from '../components/ProductCard';
-import { sizeCalc } from '../utils/utilsCalc';
-const Keyboards = () => {
+
+const Accessories = () => {
   const dispatch = useDispatch();
   const { items, status } = useSelector((state) => state.fetchAll);
   const { size } = useParams();
-
   useEffect(() => {
     async function getALL() {
       dispatch(
         fetchAllProducts({
-          category: 'keyboard',
+          category: 'accessories',
           size: size,
-          wire: size,
-          backlight: size,
-          brand: size,
         }),
       );
     }
@@ -26,7 +22,7 @@ const Keyboards = () => {
   }, [size]);
 
   const product = items.map((obj, id) => {
-    if (obj.category.includes('keyboard')) {
+    if (obj.category.includes('accessories')) {
       return (
         <CSSTransition key={obj.title} timeout={500} classNames="item_animation" unmountOnExit>
           <ProductCard {...obj} />
@@ -43,14 +39,14 @@ const Keyboards = () => {
       </div>
     );
   }
-  const sizeRender = sizeCalc(size);
+
   return (
     <div className="item_container">
-      <h1>Клавиатуры</h1>
-      {sizeRender}
+      <h1>Аксессуары</h1>
+
       <TransitionGroup className="product_cards_container_new">{product}</TransitionGroup>
     </div>
   );
 };
 
-export default Keyboards;
+export default Accessories;

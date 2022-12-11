@@ -19,6 +19,7 @@
         font-size: 20px;
         color: rgb(121, 119, 119);
         p{
+          width: fit-content;
           margin: 5px 0;
           color: white;
           font-size: 15px;
@@ -27,6 +28,11 @@
           cursor: pointer;
           &:hover {
             color: darken(white, $amount: 50%)
+          }
+          a {
+           
+            color: inherit;
+            font-size: inherit;
           }
         }
       }

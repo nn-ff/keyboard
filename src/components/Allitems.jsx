@@ -1,14 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Allitems = () => {
   const boardall = ['varmilo', 'leopold', 'ducky', 'vortex', 'RGB-подсветка', 'Все клавиатуры'];
   const accesoriesall = ['Коврики', 'Клавиши', 'Кабели', 'Все аксессуары'];
-  const miceall = ['Беспроводные мышки', 'Проводные мышки', 'Logitech', 'Все мышки'];
+  const miceall = [
+    { title: 'Беспроводные мышки', param: 'wireless' },
+    { title: 'Проводные мышки', param: 'wired' },
+    { title: 'Logitech', param: 'logitech' },
+    { title: 'Xtrfy', param: 'xtrfy' },
+    { title: 'Все мышки', param: 'Все мышки' },
+  ];
   const detalisall = ['Переключатели', 'Стабилизаторы'];
   const board = boardall.map((arr) => {
     return (
       <div className="keyboards_items_item" key={arr}>
-        {arr}
+        <Link style={{ fontSize: 20 }} to={`/keyboards/${arr}`}>
+          {arr}
+        </Link>
       </div>
     );
   });
@@ -19,10 +28,12 @@ const Allitems = () => {
       </div>
     );
   });
-  const mice = miceall.map((arr) => {
+  const mice = miceall.map((obj) => {
     return (
-      <div className="mice_items_item" key={arr}>
-        {arr}
+      <div className="mice_items_item" key={obj.title}>
+        <Link style={{ fontSize: 20 }} to={`/mice/${obj.param}`}>
+          {obj.title}
+        </Link>
       </div>
     );
   });

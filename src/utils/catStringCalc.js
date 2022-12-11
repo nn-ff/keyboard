@@ -14,6 +14,35 @@ export const stringCalculartorSize = (size) => {
   }
 };
 
+export const stringCalculatorKeyWire = (wire) => {
+  if (wire == 'wireless' || wire == 'wired') {
+    return `&wire=${wire}`;
+  } else {
+    return '';
+  }
+};
+export const stringCalculatorBrand = (brand) => {
+  if (
+    brand == 'varmilo' ||
+    brand == 'ducky' ||
+    brand == 'vortex' ||
+    brand == 'leopold' ||
+    brand == 'logitech' ||
+    brand == 'xtrfy'
+  ) {
+    return `&brand=${brand}`;
+  } else {
+    return '';
+  }
+};
+export const stringCalculatorRGB = (backlight) => {
+  if (backlight == 'RGB' || backlight == 'RGB-подсветка') {
+    return `&backlight=RGB`;
+  } else {
+    return '';
+  }
+};
+
 export const stringCalculartorCategory = (size, category) => {
   if (size) {
     return '';

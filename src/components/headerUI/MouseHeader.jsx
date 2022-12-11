@@ -15,15 +15,22 @@ const MouseHeader = ({ isHovering, onClickLink }) => {
       </div>
       <div>
         <div>Особенности</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
+        <Link className="header_links" to={`/mice/wireless`}>
+          Беспроводные
+        </Link>
+        <Link className="header_links" to={`/mice/wired`}>
+          Проводные
+        </Link>
       </div>
-      <div>Бренды</div>
-      <div>Вес</div>
+      <div>
+        Бренды
+        <Link className="header_links" to={`/mice/logitech`}>
+          logitech
+        </Link>
+        <Link className="header_links" to={`/mice/xtrfy`}>
+          Xtrfy
+        </Link>
+      </div>
     </div>
   );
 };

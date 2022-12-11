@@ -1,15 +1,24 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
+  const rangeItems = [
+    { title: 'Клавиатуры', param: 'keyboards' },
+    { title: 'Аксессуары', param: 'accessories' },
+    { title: 'Мышки', param: 'mice' },
+  ];
+  const range = rangeItems.map((obj) => {
+    return (
+      <p key={obj.title}>
+        <Link to={`/${obj.param}`}>{obj.title}</Link>
+      </p>
+    );
+  });
   return (
     <div className="footer_container">
       <div className="footer_grid_container">
         <div>
           <div>Магазин</div>
-          <p>Клавиатуры</p>
-          <p>Аксессуары</p>
-          <p>Мышки</p>
-          <p>Иснтрументы и детали</p>
+          {range}
         </div>
         <div>Покупателям</div>
         <div>
