@@ -5,7 +5,7 @@ const AccessoriesHeader = ({ isHovering, onClickLink }) => {
   return (
     <div className={hoverclass}>
       <div>
-        <Link className="imglinks_header" to="/accessories" onClick={onClickLink}>
+        <Link className="imglinks_header" to="/products/accessories" onClick={onClickLink}>
           <div className="linktext">
             <p>Все аксессуары</p>
             <span>&gt;</span>

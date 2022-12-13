@@ -11,6 +11,7 @@ import { fetchGlobal } from './redux/slices/fetchGlobalSlice';
 import './scss/global.scss';
 import Accessories from './pages/Accessories';
 import Repair from './pages/Repair';
+import FullItem from './pages/FullItem';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -24,13 +25,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="keyboards" element={<Keyboards />} />
-        <Route path="keyboards/:size" element={<Keyboards />} />
-        <Route path="keyboards/:wire" element={<Keyboards />} />
-        <Route path="mice/:size" element={<Mouses />} />
-        <Route path="mice" element={<Mouses />} />
-        <Route path="accessories" element={<Accessories />} />
-        <Route path="repair" element={<Repair />} />
+        <Route path="/products/:id" element={<FullItem />} />
+        <Route path="/products/keyboards" element={<Keyboards />} />
+        <Route path="/products/keyboards/:size" element={<Keyboards />} />
+        <Route path="/products/keyboards/:wire" element={<Keyboards />} />
+        <Route path="/products/mice/:size" element={<Mouses />} />
+        <Route path="/products/mice" element={<Mouses />} />
+        <Route path="/products/accessories" element={<Accessories />} />
+        <Route path="/repair" element={<Repair />} />
       </Routes>
       <Footer />
     </div>

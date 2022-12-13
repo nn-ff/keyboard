@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const Footer = () => {
   const rangeItems = [
-    { title: 'Клавиатуры', param: 'keyboards' },
-    { title: 'Аксессуары', param: 'accessories' },
-    { title: 'Мышки', param: 'mice' },
+    { title: 'Клавиатуры', param: 'products/keyboards' },
+    { title: 'Аксессуары', param: 'products/accessories' },
+    { title: 'Мышки', param: 'products/mice' },
   ];
   const range = rangeItems.map((obj) => {
     return (

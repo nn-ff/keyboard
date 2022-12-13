@@ -6,7 +6,7 @@ const KeyboardHeader = ({ isHovering, onClickLink }) => {
   return (
     <div className={hoverclass}>
       <div>
-        <Link className="imglinks_header" to="/keyboards" onClick={onClickLink}>
+        <Link className="imglinks_header" to="/products/keyboards" onClick={onClickLink}>
           <div className="linktext">
             <p>Все клавиатуры</p>
             <span>&gt;</span>
@@ -18,37 +18,37 @@ const KeyboardHeader = ({ isHovering, onClickLink }) => {
       </div>
       <div>
         <div>Особенности</div>
-        <Link className="header_links" to={`/keyboards/wireless`}>
+        <Link className="header_links" to={`/products/keyboards/wireless`}>
           Беспроводные
         </Link>
-        <Link className="header_links" to={`/keyboards/RGB`}>
+        <Link className="header_links" to={`/products/keyboards/RGB`}>
           RGB-подсветка
         </Link>
       </div>
       <div>
         Бренды
-        <Link className="header_links" to={`/keyboards/varmilo`}>
+        <Link className="header_links" to={`/products/keyboards/varmilo`}>
           Varmilo
         </Link>
-        <Link className="header_links" to={`/keyboards/leopold`}>
+        <Link className="header_links" to={`/products/keyboards/leopold`}>
           Leopold
         </Link>
-        <Link className="header_links" to={`/keyboards/ducky`}>
+        <Link className="header_links" to={`/products/keyboards/ducky`}>
           Ducky
         </Link>
-        <Link className="header_links" to={`/keyboards/vortex`}>
+        <Link className="header_links" to={`/products/keyboards/vortex`}>
           Vortex
         </Link>
       </div>
       <div>
         Размер
-        <Link className="header_links" to={`/keyboards/100`}>
+        <Link className="header_links" to={`/products/keyboards/100`}>
           90%-100% / полноразмерные
         </Link>
-        <Link className="header_links" to={`/keyboards/80`}>
+        <Link className="header_links" to={`/products/keyboards/80`}>
           75%-80% / без нампада
         </Link>
-        <Link className="header_links" to={`/keyboards/60`}>
+        <Link className="header_links" to={`/products/keyboards/60`}>
           60%-65% / без F-ряда
         </Link>
       </div>

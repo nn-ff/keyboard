@@ -5,7 +5,7 @@ const MouseHeader = ({ isHovering, onClickLink }) => {
   return (
     <div className={hoverclass}>
       <div>
-        <Link className="imglinks_header" to="/mice" onClick={onClickLink}>
+        <Link className="imglinks_header" to="/products/mice" onClick={onClickLink}>
           <div className="linktext">
             <p>Все мышки</p>
             <span>&gt;</span>
@@ -15,19 +15,19 @@ const MouseHeader = ({ isHovering, onClickLink }) => {
       </div>
       <div>
         <div>Особенности</div>
-        <Link className="header_links" to={`/mice/wireless`}>
+        <Link className="header_links" to={`/products/mice/wireless`}>
           Беспроводные
         </Link>
-        <Link className="header_links" to={`/mice/wired`}>
+        <Link className="header_links" to={`/products/mice/wired`}>
           Проводные
         </Link>
       </div>
       <div>
         Бренды
-        <Link className="header_links" to={`/mice/logitech`}>
+        <Link className="header_links" to={`/products/mice/logitech`}>
           logitech
         </Link>
-        <Link className="header_links" to={`/mice/xtrfy`}>
+        <Link className="header_links" to={`/products/mice/xtrfy`}>
           Xtrfy
         </Link>
       </div>

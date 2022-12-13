@@ -1,0 +1,85 @@
+$cherry_mx_brown: #744d4d;
+$cherry_mx_red: #cc2626;
+$cherry_mx_silent_red: #ac3535c2;
+$cherry_mx_blue: #4a4af9;
+$cherry_mx_black: rgb(25, 25, 25);
+$cherry_mx_clear: rgb(199, 207, 188);
+$cherry_mx_speed_silver: rgb(126, 126, 126);
+$cherry_mx_silent_black: rgb(22, 22, 22);
+.switch_change {
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 400ms ease;
+  
+  &.active {
+    opacity: 0.5;
+  &::after {
+    content: '';
+    position: absolute;
+    border: 1px red solid;
+    width: 95%;
+    transform: rotate(45deg);
+  }
+  }
+}
+.chery_mx_brown {
+  background-color: $cherry_mx_brown;
+  &:hover {
+    background-color: lighten($cherry_mx_brown, 20%);
+  }
+}
+.chery_mx_red {
+  background-color: $cherry_mx_red;
+  &:hover {
+    background-color: lighten($cherry_mx_red, 20%);
+  }
+}
+
+.cherry_mx_silent_red {
+  background-color: $cherry_mx_silent_red;
+  &:hover {
+    background-color: lighten($cherry_mx_silent_red, 20%);
+  }
+}
+
+.cherry_mx_blue {
+  background-color: $cherry_mx_blue; 
+  &:hover {
+    background-color: lighten($cherry_mx_blue, 20%);
+  }
+}
+
+.cherry_mx_black {
+  background-color: $cherry_mx_black;
+  &:hover {
+    background-color: lighten($cherry_mx_black, 20%);
+  }
+}
+
+.cherry_mx_clear {
+  background-color: $cherry_mx_clear;
+  &:hover {
+    background-color: lighten($cherry_mx_clear, 20%);
+  }
+} 
+
+.cherry_mx_speed_silver {
+  background-color: $cherry_mx_speed_silver;
+  &:hover {
+    background-color: lighten($cherry_mx_speed_silver, 20%);
+  }
+}
+.cherry_mx_silent_black {
+  background-color: $cherry_mx_silent_black;
+  &:hover {
+    background-color: lighten($cherry_mx_silent_black, 20%);
+  }
+}

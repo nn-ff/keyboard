@@ -1,0 +1,37 @@
+.fullprdouct_container {
+  height: 1000px;
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+  margin: 0 120px;
+  @media (max-width: 2000px) {
+    margin: 0 20px;
+  }
+  
+    img {
+      width: 100%;
+      object-fit: cover;
+  
+    }
+  
+}
+
+
+.mySwiperFullImgTwo {
+  height: 80%;
+  width: 100%;
+}
+.mySwiperFullImgOne {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  .swiper-slide {
+    opacity: 0.3;
+  }
+    .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+  
+}

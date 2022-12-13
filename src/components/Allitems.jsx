@@ -15,7 +15,7 @@ const Allitems = () => {
   const board = boardall.map((arr) => {
     return (
       <div className="keyboards_items_item" key={arr}>
-        <Link style={{ fontSize: 20 }} to={`/keyboards/${arr}`}>
+        <Link style={{ fontSize: 20 }} to={`/products/keyboards/${arr}`}>
           {arr}
         </Link>
       </div>
@@ -31,7 +31,7 @@ const Allitems = () => {
   const mice = miceall.map((obj) => {
     return (
       <div className="mice_items_item" key={obj.title}>
-        <Link style={{ fontSize: 20 }} to={`/mice/${obj.param}`}>
+        <Link style={{ fontSize: 20 }} to={`/products/mice/${obj.param}`}>
           {obj.title}
         </Link>
       </div>
