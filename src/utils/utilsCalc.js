@@ -1,4 +1,26 @@
 export const sizeCalc = (size) => {
+  if (size == 'forBoards') {
+    return <h2>Для клавиатуры</h2>;
+  }
+
+  if (size == 'forMice') {
+    return <h2>Для мышки</h2>;
+  }
+
+  if (size == 'mousepad') {
+    return <h2>Коврики</h2>;
+  }
+
+  if (size == 'cables') {
+    return <h2>Кабели</h2>;
+  }
+  if (size == 'holders') {
+    return <h2>Подставки</h2>;
+  }
+  if (size == 'keycaps') {
+    return <h2>Клавиши</h2>;
+  }
+
   if (size == '100') {
     return <h2>Полноразмерные / 90-100%</h2>;
   }

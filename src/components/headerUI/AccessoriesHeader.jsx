@@ -17,15 +17,40 @@ const AccessoriesHeader = ({ isHovering, onClickLink }) => {
       </div>
       <div>
         <div>Назначение</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
+        <Link className="header_links" to={`/products/accessories/forBoards`}>
+          Для клавиатуры
+        </Link>
+        <Link className="header_links" to={`/products/accessories/forMice`}>
+          Для мышки
+        </Link>
       </div>
-      <div>Категории</div>
-      <div>Бренды</div>
+      <div>
+        Категории
+        <Link className="header_links" to={`/products/accessories/mousepad`}>
+          Коврики
+        </Link>
+        <Link className="header_links" to={`/products/accessories/cables`}>
+          Кабели
+        </Link>
+        <Link className="header_links" to={`/products/accessories/keycaps`}>
+          Клавиши
+        </Link>
+        <Link className="header_links" to={`/products/accessories/holders`}>
+          Подставки
+        </Link>
+      </div>
+      <div>
+        Бренды
+        <Link className="header_links" to={`/products/accessories/varmilo`}>
+          Varmilo
+        </Link>
+        <Link className="header_links" to={`/products/accessories/ducky`}>
+          Ducky
+        </Link>
+        <Link className="header_links" to={`/products/accessories/xtrfy`}>
+          Xtrfy
+        </Link>
+      </div>
     </div>
   );
 };

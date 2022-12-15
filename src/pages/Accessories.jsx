@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchAllProducts } from '../redux/slices/fetchAllSlice';
 import ProductCard from '../components/ProductCard';
+import { sizeCalc } from '../utils/utilsCalc';
 
 const Accessories = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,9 @@ const Accessories = () => {
         fetchAllProducts({
           category: 'accessories',
           size: size,
+          dest: size,
+          brand: size,
+          accType: size,
         }),
       );
     }
@@ -39,11 +43,11 @@ const Accessories = () => {
       </div>
     );
   }
-
+  const sizeRender = sizeCalc(size);
   return (
     <div className="item_container">
       <h1>Аксессуары</h1>
-
+      {sizeRender}
       <TransitionGroup className="product_cards_container_new">{product}</TransitionGroup>
     </div>
   );

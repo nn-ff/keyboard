@@ -1,8 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { stringCalculartorSearch } from '../../utils/catStringCalc';
 
 export const fetchGlobal = createAsyncThunk('fetchGlobal/fetchGlobalStatus', async (params) => {
-  const { data } = await axios.get(`https://63264eebba4a9c4753256eee.mockapi.io/items`);
+  const { search } = params;
+  const titleString = stringCalculartorSearch(search);
+  const { data } = await axios.get(
+    `https://63264eebba4a9c4753256eee.mockapi.io/items${titleString}`,
+  );
   return data;
 });
 

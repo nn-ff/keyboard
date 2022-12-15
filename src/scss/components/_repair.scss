@@ -1,0 +1,44 @@
+.list_container {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+margin-left: 120px;
+margin-right: 120px;
+margin-top: 50px;
+@media (max-width: 1150px) {
+  grid-template-columns: repeat(1, 1fr);
+}
+}
+.grid_block_container {
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  margin-right: 30px;
+  padding-bottom: 5px;
+  user-select: none;
+  transition: all 300ms ease;
+  &:hover {
+    .repair_price {
+      color: darken($color: #7272f8, $amount: 10%)
+    }
+  }
+}
+
+.repair_title {
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.repair_description {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.repair_price {
+  margin-left: auto;
+  padding-left: 50px;
+  color: #7272f8;
+  font-weight: 600;
+  flex: 0 0 auto;
+  transition: all 300ms ease;
+}

@@ -12,6 +12,7 @@ import './scss/global.scss';
 import Accessories from './pages/Accessories';
 import Repair from './pages/Repair';
 import FullItem from './pages/FullItem';
+import Search from './pages/Search';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,7 +33,9 @@ function App() {
         <Route path="/products/mice/:size" element={<Mouses />} />
         <Route path="/products/mice" element={<Mouses />} />
         <Route path="/products/accessories" element={<Accessories />} />
+        <Route path="/products/accessories/:size" element={<Accessories />} />
         <Route path="/repair" element={<Repair />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
       <Footer />
     </div>

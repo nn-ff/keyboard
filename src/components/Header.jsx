@@ -8,7 +8,7 @@ import AccessoriesHeader from './headerUI/AccessoriesHeader';
 import RepairHeader from './headerUI/RepairHeader';
 const Header = () => {
   const [isHovering, setIsHovering] = useState(false);
-  const [categoryId, setCategoryId] = useState(0);
+  const [categoryId, setCategoryId] = useState('close');
 
   const handleMouseOver = (id) => {
     setIsHovering(true);
@@ -17,10 +17,12 @@ const Header = () => {
 
   const handleMouseOut = () => {
     setIsHovering(false);
+    setCategoryId('close');
   };
 
   const onClickLink = () => {
     setIsHovering(false);
+    setCategoryId('close');
   };
 
   const hoverclass = isHovering ? 'header_hover_block active' : 'header_hover_block';
@@ -28,7 +30,11 @@ const Header = () => {
   return (
     <div>
       <Toppanels />
-      <Bottompanels handleMouseOver={handleMouseOver} />
+      <Bottompanels
+        onClickLink={onClickLink}
+        categoryId={categoryId}
+        handleMouseOver={handleMouseOver}
+      />
 
       <div className={hoverclass} onClick={onClickLink}>
         <div className={categoryId == 0 ? 'header_item active' : 'header_item'}>
@@ -45,7 +51,9 @@ const Header = () => {
           <RepairHeader isHovering={isHovering} onClickLink={onClickLink} />
         </div>
       </div>
-      {isHovering && <div className="out_block" onMouseOut={handleMouseOut}></div>}
+      {isHovering && (
+        <div className="out_block" onMouseOver={handleMouseOut} onMouseOut={handleMouseOut}></div>
+      )}
     </div>
   );
 };

@@ -16,16 +16,32 @@ const RepairHeader = ({ isHovering, onClickLink }) => {
         </Link>
       </div>
       <div>
-        <div>Ремонт клавиатуры</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
-        <div>asdasd</div>
+        Ремонт клавиатуры
+        <Link to="/repair" className="header_links">
+          Разбор корпуса
+        </Link>
+        <Link to="/repair" className="header_links">
+          Чистка клавиатуры
+        </Link>
       </div>
-      <div>Апгрейд клавиатуры</div>
-      <div>Другое</div>
+      <div>
+        Апгрейд клавиатуры
+        <Link to="/repair" className="header_links">
+          Смазка переключателей
+        </Link>
+        <Link to="/repair" className="header_links">
+          Установка шумоизоляции
+        </Link>
+      </div>
+      <div>
+        Ремонт мышек
+        <Link to="/repair" className="header_links">
+          Замена микрика
+        </Link>
+        <Link to="/repair" className="header_links">
+          Замена энкодера колеса
+        </Link>
+      </div>
     </div>
   );
 };
