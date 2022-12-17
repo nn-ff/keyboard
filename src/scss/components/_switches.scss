@@ -3,9 +3,10 @@ $cherry_mx_red: #cc2626;
 $cherry_mx_silent_red: #ac3535c2;
 $cherry_mx_blue: #4a4af9;
 $cherry_mx_black: rgb(25, 25, 25);
-$cherry_mx_clear: rgb(199, 207, 188);
+$cherry_mx_clear: rgb(163, 170, 153);
 $cherry_mx_speed_silver: rgb(126, 126, 126);
-$cherry_mx_silent_black: rgb(22, 22, 22);
+$cherry_mx_silent_black: rgb(46, 45, 45);
+
 .switch_change {
   color: white;
   font-weight: 600;
@@ -81,5 +82,40 @@ $cherry_mx_silent_black: rgb(22, 22, 22);
   background-color: $cherry_mx_silent_black;
   &:hover {
     background-color: lighten($cherry_mx_silent_black, 20%);
+  }
+}
+
+.cherry_mx_blue_rgb {
+background-color: lighten($cherry_mx_blue, 20%);
+&:hover {
+  background-color: lighten($color: $cherry_mx_blue, $amount: 30%);
+}
+}
+
+.cherry_mx_red_rgb {
+  background-color: lighten($cherry_mx_red, 20%);
+  &:hover {
+    background-color: lighten($cherry_mx_red, 30%)
+  }
+}
+
+.cherry_mx_brown_rgb {
+  background-color: lighten($cherry_mx_brown, 20%);
+  &:hover {
+    background-color: lighten($cherry_mx_brown, 30%);
+  }
+}
+
+.cherry_mx_silent_red_rgb {
+  background-color: lighten($cherry_mx_silent_red, 20%);
+  &:hover {
+    background-color: lighten($cherry_mx_silent_red, 30%);
+  }
+}
+
+.cherry_mx_speed_silver_rgb {
+  background-color: lighten($cherry_mx_speed_silver, 20%);
+  &:hover {
+    background-color: lighten($cherry_mx_speed_silver, 30%);
   }
 }

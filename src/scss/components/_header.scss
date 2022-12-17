@@ -3,7 +3,7 @@ $header-color: hsl(204deg 10% 10%);
 .header_box_top {
   height: 55.25px;
 .header_main {
-  z-index: 100;
+  z-index: 669;
   position: fixed;
   width: 100%;
   display: flex;
@@ -65,7 +65,7 @@ $header-color: hsl(204deg 10% 10%);
     color: black;
     background-color: white;
     padding: 12px;
-    z-index: 100;
+    z-index: 669;
     @media (max-width: 2000px) {
       justify-content: space-between;
     }
@@ -73,6 +73,7 @@ $header-color: hsl(204deg 10% 10%);
       display: flex;
       img {
         margin: 0 15px;
+        margin-top: 4px;
       }
       .item_botpanel {
         position: relative;

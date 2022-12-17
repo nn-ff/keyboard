@@ -28,8 +28,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products/:id" element={<FullItem />} />
         <Route path="/products/keyboards" element={<Keyboards />} />
-        <Route path="/products/keyboards/:size" element={<Keyboards />} />
-        <Route path="/products/keyboards/:wire" element={<Keyboards />} />
+        <Route path="/products/keyboards/:param" element={<Keyboards />} />
         <Route path="/products/mice/:size" element={<Mouses />} />
         <Route path="/products/mice" element={<Mouses />} />
         <Route path="/products/accessories" element={<Accessories />} />

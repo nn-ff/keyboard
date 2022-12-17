@@ -7,11 +7,11 @@ export const switchesArr = [
   { id: 5, title: 'CL', class: 'cherry_mx_clear' },
   { id: 6, title: 'SS', class: 'cherry_mx_speed_silver' },
   { id: 7, title: 'SB', class: 'cherry_mx_silent_black' },
-  { id: 8, title: 'B', class: 'cherry_mx_blue' },
-  { id: 9, title: 'BR', class: 'chery_mx_brown' },
-  { id: 10, title: 'R', class: 'chery_mx_red' },
-  { id: 11, title: 'SR', class: 'cherry_mx_silent_red' },
-  { id: 12, title: 'SS', class: 'cherry_mx_speed_silver' },
+  { id: 8, title: 'B', class: 'cherry_mx_blue_rgb' },
+  { id: 9, title: 'BR', class: 'cherry_mx_brown_rgb' },
+  { id: 10, title: 'R', class: 'cherry_mx_red_rgb' },
+  { id: 11, title: 'SR', class: 'cherry_mx_silent_red_rgb' },
+  { id: 12, title: 'SS', class: 'cherry_mx_speed_silver_rgb' },
 ];
 
 export const switchDescriptionArr = [
@@ -82,7 +82,7 @@ export const switchDescriptionArr = [
       'Очень лёгкое нажатие, похожи на Cherry MX Red, но ход укорочен. Срабатывают раньше, чем обычно, и поэтому очень популярны у геймеров. С непривычки могут возникать лишние срабатывания при печати.',
     descProperty:
       '<p>Производитель: Cherry<br>Тип: линейный<br>Сила нажатия: 45 грамм (лёгкие)<br>Длина пути: 3.4 мм (1.2 мм до срабатывания)</p>',
-    title: 'Cherry MX Clear',
+    title: 'Cherry MX Speed Silver',
     img: 'https://static.insales-cdn.com/files/1/1969/17156017/original/icon-cherry-speed-silver_540920f85aea7c05caec48b7d543033f_1_.webp',
   },
   {
@@ -92,7 +92,7 @@ export const switchDescriptionArr = [
       'Специфические переключатели. Тяжёлые и, пожалуй, одни из самых плавных и тихих. Если сравнивать с пистолетами, то это — пистолет с глушителем. Подойдут для опытных пользователей с чётким пониманием того, какие переключатели им нравятся.',
     descProperty:
       '<p>Производитель: Cherry<br>Тип: тихий линейный<br>Сила нажатия: 60 грамм (тяжёлые)<br>Длина пути: 3.7 мм (1.9 мм до срабатывания)</p>',
-    title: 'Cherry MX Clear',
+    title: 'Cherry MX Silent Black',
     img: 'https://static.insales-cdn.com/files/1/1972/17156020/original/asdfasdfsdfcxzv_f56cdc9a878179919e34dea049e2d2e9_1_.webp',
   },
   {
@@ -142,7 +142,7 @@ export const switchDescriptionArr = [
       'Очень лёгкое нажатие, похожи на Cherry MX Red, но ход укорочен. Срабатывают раньше, чем обычно, и поэтому очень популярны у геймеров. С непривычки могут возникать лишние срабатывания при печати.',
     descProperty:
       '<p>Производитель: Cherry<br>Тип: линейный<br>Сила нажатия: 45 грамм (лёгкие)<br>Длина пути: 3.4 мм (1.2 мм до срабатывания)</p>',
-    title: 'Cherry MX Clear',
+    title: 'Cherry MX Speed Silver',
     img: 'https://static.insales-cdn.com/files/1/3101/17206301/original/img-productstage-mxSpeedSilverRGB_2x_100-368x3681111_result.webp',
   },
 ];

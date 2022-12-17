@@ -166,6 +166,7 @@
     
   }
   .product_info_image_container {
+    position: relative;
     margin-top: 7px;
     display: flex;
     justify-content: center;
@@ -174,7 +175,7 @@
     display: flex;
             position: absolute;
             width: 100%;
-            height: 50%;
+            height: 100%;
             div {
               flex: 1;
             }
@@ -191,4 +192,105 @@
     &.active {
       opacity: 1;
     }
+  }
+
+  .item_filter_container {
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+    margin: 5px 30px;
+    transition: all 300ms ease;
+    overflow: hidden;
+    max-height: 37px;
+    &.active {
+      max-height: 400px;
+    }
+    .param_container {
+      user-select: none;
+      display: flex;
+      justify-content: space-around;
+    }
+    .filter_title {
+      width: fit-content;
+      margin: 0 auto;
+      position: relative;
+      font-size: 20px;
+      padding: 5px 0;
+      user-select: none;
+      .filter_animation {
+        position: absolute;
+    font-size: 20px;
+    top: 6px;
+    right: -15px;
+    transform: rotate(90deg);
+    transition: all 300ms ease;
+    &.active {
+      transform: rotate(-90deg);
+    }
+      }
+    }
+  }
+
+  .filter_button {
+    
+    margin: 10px 0;
+    padding: 2px;
+    font-size: 17px;
+    border-radius: 15px;
+    border: 1px solid #0083f1;
+    transition: all 300ms ease;
+    user-select: none;
+    position: relative;
+    &.active {
+      background-color: #0083f1;
+      color: white;
+    }
+    &:hover {
+      background-color: #0083f1;
+      color: white;
+    }
+  }
+  
+  .reset_icon {
+    position: absolute;
+    right: -30px;
+    top: 2px;
+    z-index: 20;
+    opacity: 0.5;
+    transition: opacity 300ms ease;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .container_select {
+    position: relative;
+  }
+  .switch_filter {
+    cursor: pointer;
+    margin: 0 5px;
+    &.select {
+      border: 2px solid rgb(171 0 255);
+      transform: scale(1.2);
+    }
+  }
+  .reset_icon_switch {
+    position: absolute;
+    right: -12px;
+    top: 7px;
+    z-index: 20;
+    opacity: 0.5;
+    transition: opacity 300ms ease;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .switch_info {
+    color: white;
+    position: absolute;
+    font-size: 15px;
+    background-color: #0083f1;
+    border-radius: 15px;
+    padding: 5px;
+    top: -35px;
   }

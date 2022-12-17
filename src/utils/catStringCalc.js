@@ -71,8 +71,8 @@ export const stringCalculatorDest = (dest) => {
   }
 };
 
-export const stringCalculartorCategory = (size, category) => {
-  if (size) {
+export const stringCalculartorCategory = (param, category) => {
+  if (param) {
     return '';
   } else {
     return `&category=${category}`;

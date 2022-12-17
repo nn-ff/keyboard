@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import ProgressiveImage from 'react-progressive-graceful-image';
 import { Link } from 'react-router-dom';
 import SwitchesPanel from './SwitchesPanel';
 
 const ProductCard = ({ title, imageUrl, price, id, switches, soldout, wire }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const bulletArr = ['', '', ''];
+  const placeholder = <div className="loader_image"></div>;
   return (
     <Link to={`/products/${id}`} className="product_card" key={title}>
       {soldout == 'true' ? (
@@ -31,15 +33,24 @@ const ProductCard = ({ title, imageUrl, price, id, switches, soldout, wire }) =>
             onMouseOver={() => setCurrentImage(2)}
             onMouseOut={() => setCurrentImage(0)}></div>
         </div>
-        <img style={{ width: '100%', opacity: 0 }} src={imageUrl[0]} />
+
+        <img style={{ width: '100%', opacity: 0 }} src="https://i.imgur.com/CmX7PG4.jpg" />
 
         {imageUrl.map((arr, id) => {
           return (
-            <img
-              key={id}
-              className={currentImage == id ? 'product_img active' : 'product_img'}
-              src={arr}
-            />
+            <ProgressiveImage key={id} src={arr} placeholder="">
+              {(src, loading) => {
+                return loading ? (
+                  placeholder
+                ) : (
+                  <img
+                    className={currentImage == id ? 'product_img active' : 'product_img'}
+                    src={src}
+                    alt="an image"
+                  />
+                );
+              }}
+            </ProgressiveImage>
           );
         })}
       </div>
