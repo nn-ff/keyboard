@@ -2,7 +2,13 @@ import React from 'react';
 import logo from '../../assets/logoB.png';
 import Bottomitems from './Bottomitems';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setVisibleCart } from '../../redux/slices/modalSlice';
 const Bottompanels = ({ handleMouseOver, categoryId, onClickLink }) => {
+  const dispatch = useDispatch();
+  const onClickCart = () => {
+    dispatch(setVisibleCart(true));
+  };
   const botItemsList = [
     {
       title: 'Клавиатуры',
@@ -55,7 +61,7 @@ const Bottompanels = ({ handleMouseOver, categoryId, onClickLink }) => {
             </svg>
           </Link>
 
-          <div className="header_bottom_cart">
+          <div onClick={onClickCart} className="header_bottom_cart">
             <svg
               fill="none"
               height="27"

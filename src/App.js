@@ -13,6 +13,7 @@ import Accessories from './pages/Accessories';
 import Repair from './pages/Repair';
 import FullItem from './pages/FullItem';
 import Search from './pages/Search';
+import CartModal from './components/cartModal/CartModal';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/repair" element={<Repair />} />
         <Route path="/search" element={<Search />} />
       </Routes>
+      <CartModal />
       <Footer />
     </div>
   );

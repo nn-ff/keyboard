@@ -9,7 +9,7 @@ const Repair = () => {
       <div className="list_container">
         {repairListBoard.map((obj) => {
           return (
-            <div className="grid_block_container">
+            <div className="grid_block_container" key={obj.title}>
               <div className="repair_title">{obj.title}</div>
               <div style={{ display: 'flex' }}>
                 <div className="repair_description">{obj.description}</div>
@@ -23,7 +23,7 @@ const Repair = () => {
       <div className="list_container">
         {upgradeList.map((obj) => {
           return (
-            <div className="grid_block_container">
+            <div className="grid_block_container" key={obj.title}>
               <div className="repair_title">{obj.title}</div>
               <div style={{ display: 'flex' }}>
                 <div className="repair_description">{obj.description}</div>
@@ -37,7 +37,7 @@ const Repair = () => {
       <div className="list_container">
         {repairListMice.map((obj) => {
           return (
-            <div className="grid_block_container">
+            <div className="grid_block_container" key={obj.title}>
               <div className="repair_title">{obj.title}</div>
               <div style={{ display: 'flex' }}>
                 <div className="repair_description">{obj.description}</div>
