@@ -17,7 +17,8 @@ const ProductCard = ({ title, imageUrl, price, id, switches, soldout, wire }) =>
       {wire == 'wireless' ? (
         <img
           className="product-card__bluetooth"
-          src="https://static.insales-cdn.com/assets/1/2180/3156100/1670604059/bluetooth.png"></img>
+          src="https://static.insales-cdn.com/assets/1/2180/3156100/1670604059/bluetooth.png"
+          alt="img"></img>
       ) : (
         ''
       )}
@@ -34,7 +35,11 @@ const ProductCard = ({ title, imageUrl, price, id, switches, soldout, wire }) =>
             onMouseOut={() => setCurrentImage(0)}></div>
         </div>
 
-        <img style={{ width: '100%', opacity: 0 }} src="https://i.imgur.com/CmX7PG4.jpg" />
+        <img
+          style={{ width: '100%', opacity: 0 }}
+          src="https://i.imgur.com/CmX7PG4.jpg"
+          alt="img"
+        />
 
         {imageUrl.map((arr, id) => {
           return (

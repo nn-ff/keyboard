@@ -15,6 +15,19 @@
       grid-template-rows: repeat(3, 500px);
       margin: 5px 60px;
     }
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(5, 300px);
+      margin: 5px 60px;
+      .div1,
+      .div2,
+      .div3,
+      .div4,
+      .div5,
+      .div6 {
+        grid-area: auto;
+      }
+    }
     }
   .div1 { grid-area: 1 / 1 / 2 / 3;
     background-image: url("https://www.computerlounge.co.nz/data/media/images/blog//varmilo_lovebirds_i.jpg");

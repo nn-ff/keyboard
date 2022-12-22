@@ -9,7 +9,7 @@ const FilterCategory = () => {
 
   return (
     <>
-      {accCategory.map((obj, id) => {
+      {accCategory.map((obj) => {
         return (
           <div className="container_select" key={obj.title}>
             <div

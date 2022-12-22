@@ -58,6 +58,7 @@ const SwitchesPanel = ({ switches }) => {
             <img
               style={{ width: '25%', height: '30%', marginLeft: 15, marginTop: 15 }}
               src={obj.img}
+              alt="img"
             />
             <div
               className="product_info_desc_property"

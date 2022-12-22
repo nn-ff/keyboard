@@ -38,7 +38,7 @@ const SwiperMenu = () => {
     return (
       <SwiperSlide key={obj.title}>
         <Link className="swiper_slide_links" to={obj.link}>
-          <img className="swiper_slide_img" src={obj.url} />
+          <img className="swiper_slide_img" src={obj.url} alt="img" />
         </Link>
       </SwiperSlide>
     );

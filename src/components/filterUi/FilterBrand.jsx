@@ -1,5 +1,4 @@
 import React from 'react';
-import { brandKeyboards } from '../../utils/filterList';
 import { useDispatch, useSelector } from 'react-redux';
 import { setBrand } from '../../redux/slices/filterSlice';
 
@@ -8,7 +7,7 @@ const FilterBrand = ({ brandList }) => {
   const { brand } = useSelector((state) => state.filter);
   return (
     <>
-      {brandList.map((obj, id) => {
+      {brandList.map((obj) => {
         return (
           <div className="container_select" key={obj.title}>
             <div

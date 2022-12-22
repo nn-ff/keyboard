@@ -9,7 +9,7 @@ import FilterSwitch from './filterUi/FilterSwitch';
 
 const FilterKeyboards = ({ onCLickFilter, open }) => {
   const dispatch = useDispatch();
-  const { id, soldout } = useSelector((state) => state.filter.switches);
+  const { id } = useSelector((state) => state.filter.switches);
   const onCLickSwitchReset = () => {
     dispatch(setSwitchId('close'));
     dispatch(setSwitchSoldout('close'));

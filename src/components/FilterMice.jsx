@@ -1,12 +1,9 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { brandMice } from '../utils/filterList';
 import FilterBrand from './filterUi/FilterBrand';
 import FilterSoldout from './filterUi/FilterSoldout';
 import FilterWire from './filterUi/FilterWire';
 const FilterMice = ({ onCLickFilter, open }) => {
-  const dispatch = useDispatch();
-
   return (
     <div
       className={open ? 'item_filter_container' : 'item_filter_container active'}

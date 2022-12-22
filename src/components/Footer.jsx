@@ -20,10 +20,18 @@ const Footer = () => {
           <div>Магазин</div>
           {range}
         </div>
-        <div>Покупателям</div>
+        <div>
+          <div>Покупателям</div>
+          <Link to="/delivery">
+            <p>Доставка и оплата</p>
+          </Link>
+        </div>
+
         <div>
           <div>Полезное</div>
-          <p>Статьи</p>
+          <p>
+            <Link to="/article">Статьи</Link>
+          </p>
         </div>
         <div>
           <div>Поддержка</div>
@@ -32,9 +40,15 @@ const Footer = () => {
         </div>
         <div>
           <div>Соцсети</div>
-          <p>Telegram</p>
-          <p>ВКонтакте</p>
-          <p>Instagram</p>
+          <p>
+            <a href="https://web.telegram.org/">Telegram</a>
+          </p>
+          <p>
+            <a href="https://vk.com/">ВКонтакте</a>
+          </p>
+          <p>
+            <a href="https://www.instagram.com/">Instagram</a>
+          </p>
         </div>
       </div>
     </div>

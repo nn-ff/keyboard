@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductsNews } from '../redux/slices/itemsSlice';
 import { setNewsPopular } from '../redux/slices/newsAndPopular';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import SwitchesPanel from './SwitchesPanel';
 import ProductCard from './ProductCard';
 
 const NewAndPopular = () => {

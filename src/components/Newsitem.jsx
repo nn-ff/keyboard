@@ -1,42 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { articleList } from '../utils/ArticleList';
 
 const Newsitem = () => {
-  const testing = {
-    img: 'https://static.insales-cdn.com/files/1/620/24158828/original/Travolta-wanna-find-a-keyboard-in-Geekboards.jpg',
-    title: 'Как выбрать клавиатуру',
-    desc: 'Browsers do not provide any special information on background images to assistive technology. This is important primarily for screen readers, as a screen reader will not announce its presence and therefore convey nothing to its users.',
-  };
-  return (
-    <div className="news_block">
-      <div className="news_block_item">
+  const article = articleList.map((obj) => {
+    return (
+      <Link
+        style={{ color: 'black' }}
+        to={`/article/${obj.id}`}
+        key={obj.title}
+        className="news_block_item">
         <div className="news_block_item_image_container">
-          <img src={testing.img} />
+          <img src={obj.img} alt="keyboard image" />
         </div>
         <div className="news_block_item_title">
-          <h1>{testing.title}</h1>
+          <h1>{obj.title}</h1>
         </div>
-        <div>{testing.desc}</div>
-      </div>
-      <div className="news_block_item">
-        <div className="news_block_item_image_container">
-          <img src={testing.img} />
-        </div>
-        <div className="news_block_item_title">
-          <h1>{testing.title}</h1>
-        </div>
-        <div>{testing.desc}</div>
-      </div>
-      <div className="news_block_item">
-        <div className="news_block_item_image_container">
-          <img src={testing.img} />
-        </div>
-        <div className="news_block_item_title">
-          <h1>{testing.title}</h1>
-        </div>
-        <div>{testing.desc}</div>
-      </div>
-    </div>
-  );
+        <div className="news_block_item_desc">{obj.shortDesc}</div>
+      </Link>
+    );
+  });
+  return <div className="news_block">{article}</div>;
 };
 
 export default Newsitem;

@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../../assets/logoB.png';
 import Bottomitems from './Bottomitems';
-import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { setVisibleCart } from '../../redux/slices/modalSlice';
 const Bottompanels = ({ handleMouseOver, categoryId, onClickLink }) => {
   const dispatch = useDispatch();
@@ -13,24 +13,29 @@ const Bottompanels = ({ handleMouseOver, categoryId, onClickLink }) => {
     {
       title: 'Клавиатуры',
       id: '0',
+      link: '/products/keyboards',
     },
     {
       title: 'Мыши',
       id: '1',
+      link: 'products/mice',
     },
     {
       title: 'Аксессуары',
       id: '2',
+      link: '/products/accessories',
     },
     {
       title: 'Ремонт и апгрейд',
       id: '3',
+      link: '/repair',
     },
   ];
 
   const botItems = botItemsList.map((obj) => {
     return (
       <Bottomitems
+        onClickLink={onClickLink}
         categoryId={categoryId}
         handleMouseOver={handleMouseOver}
         key={obj.id}
@@ -42,14 +47,14 @@ const Bottompanels = ({ handleMouseOver, categoryId, onClickLink }) => {
     <div className="header_box_bottom">
       <div className="header_bottom">
         <div className="header_bottom_left">
-          <Link to="/" style={{ width: 174 }}>
-            <img src={logo} />
+          <Link to="/" style={{ width: 174, height: 'fit-content' }}>
+            <img src={logo} alt="img" />
           </Link>
 
           {botItems}
         </div>
         <div className="header_bottom_right">
-          <Link onClick={onClickLink} to="/search">
+          <Link style={{ height: 'fit-content' }} onClick={onClickLink} to="/search">
             <svg
               className="header_search_svg"
               fill="#000000"

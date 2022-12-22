@@ -38,4 +38,32 @@
       }
       
   }
+@media (max-width: 1000px) {
+  .footer_grid_container {
+    margin-left: 60px;
+    margin-right: 20px;
+  }
 }
+
+@media (max-width: 730px) {
+  .footer_grid_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 490px) {
+  .footer_grid_container {
+    margin-left: 0;
+    grid-template-columns: repeat(1, 1fr);
+    div {
+      text-align: center;
+      p {
+      width: auto;
+      text-align: center;
+    }
+    }
+    
+  }
+}
+
+}
+

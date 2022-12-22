@@ -1,27 +1,24 @@
-import React, { useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import { useDispatch, useSelector } from 'react-redux';
 import Home from './pages/Home';
 import Keyboards from './pages/Keyboards';
 import Mouses from './pages/Mouses';
-import { fetchGlobal } from './redux/slices/fetchGlobalSlice';
-
 import './scss/global.scss';
 import Accessories from './pages/Accessories';
 import Repair from './pages/Repair';
 import FullItem from './pages/FullItem';
 import Search from './pages/Search';
 import CartModal from './components/cartModal/CartModal';
+import Article from './pages/Article';
+import ArticleFull from './pages/ArticleFull';
+import Delivery from './pages/Delivery';
+import Vacancy from './pages/Vacancy';
+import TradeIn from './pages/TradeIn';
+import Discount from './pages/Discount';
+
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    async function getALL() {
-      dispatch(fetchGlobal({}));
-    }
-    getALL();
-  }, []);
   return (
     <div className="App">
       <Header />
@@ -36,6 +33,12 @@ function App() {
         <Route path="/products/accessories/:size" element={<Accessories />} />
         <Route path="/repair" element={<Repair />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/article" element={<Article />} />
+        <Route path="/article/:param" element={<ArticleFull />} />
+        <Route path="/delivery" element={<Delivery />} />
+        <Route path="/vacancy" element={<Vacancy />} />
+        <Route path="/trade-in" element={<TradeIn />} />
+        <Route path="/discount" element={<Discount />} />
       </Routes>
       <CartModal />
       <Footer />

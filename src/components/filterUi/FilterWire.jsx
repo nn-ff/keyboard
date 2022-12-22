@@ -8,7 +8,7 @@ const FilterWire = () => {
   const { wire } = useSelector((state) => state.filter);
   return (
     <>
-      {wireAll.map((obj, id) => {
+      {wireAll.map((obj) => {
         return (
           <div className="container_select" key={obj.title}>
             <div

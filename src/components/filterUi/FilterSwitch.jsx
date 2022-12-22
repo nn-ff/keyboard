@@ -6,7 +6,7 @@ import SwitchInfo from './SwitchInfo';
 
 const FilterSwitch = () => {
   const dispatch = useDispatch();
-  const { id, soldout } = useSelector((state) => state.filter.switches);
+  const { id } = useSelector((state) => state.filter.switches);
   const [info, setInfo] = useState('close');
   const switchFilter = switchesArr.map((obj) => {
     const switchClass = ' switch_change';

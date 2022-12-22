@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 const AccessoriesHeader = ({ isHovering, onClickLink }) => {
   const hoverclass = isHovering ? 'header_bottom_item active' : 'header_bottom_item';
   return (
@@ -12,7 +13,8 @@ const AccessoriesHeader = ({ isHovering, onClickLink }) => {
           </div>
           <img
             className="img_header"
-            src="https://fantechworld.com/wp-content/uploads/2022/06/maxfit61-1536x1024.jpg"></img>
+            src="https://fantechworld.com/wp-content/uploads/2022/06/maxfit61-1536x1024.jpg"
+            alt="img"></img>
         </Link>
       </div>
       <div>

@@ -9,6 +9,9 @@ const Search = () => {
   const { value } = useSelector((state) => state.search);
   const { items, status } = useSelector((state) => state.fetchGlobal);
   const inputRef = useRef();
+  useEffect(() => {
+    dispatch(fetchGlobal({ search: 'close' }));
+  }, []);
   const onChangeInput = (e) => {
     dispatch(setSearch(e.target.value));
   };
@@ -32,6 +35,8 @@ const Search = () => {
       </div>
     );
   });
+
+  console.log(items);
 
   return (
     <div className="search_container">

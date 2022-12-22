@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 const RepairHeader = ({ isHovering, onClickLink }) => {
   const hoverclass = isHovering ? 'header_bottom_item active' : 'header_bottom_item';
   return (
@@ -12,7 +13,8 @@ const RepairHeader = ({ isHovering, onClickLink }) => {
           </div>
           <img
             className="img_header"
-            src="https://www.overclockers.ua/peripheral/varmilo-ma108-panda/19-big-varmilo-ma108-panda.jpg"></img>
+            src="https://www.overclockers.ua/peripheral/varmilo-ma108-panda/19-big-varmilo-ma108-panda.jpg"
+            alt="img"></img>
         </Link>
       </div>
       <div>

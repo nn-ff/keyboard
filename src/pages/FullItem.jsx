@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs } from 'swiper';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,20 +8,19 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import axios from 'axios';
-import Parser from 'html-react-parser';
-import { switchDescriptionArr, switchesArr } from '../utils/switches';
 import { setAddItem } from '../redux/slices/cartSlice';
+import FullItemSwitch from '../components/FullItemSwitch';
 
 const FullItem = () => {
   const dispatch = useDispatch();
   const { cartItem } = useSelector((state) => state.cart);
-
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
   const [sw, setSw] = useState({
     id: 'close',
     soldout: 'close',
+    title: 'close',
   });
   const [idProduct, setIdProduct] = useState();
   useEffect(() => {
@@ -71,96 +70,31 @@ const FullItem = () => {
     setSw({
       id: obj.id,
       soldout: arr.soldout,
+      title: obj.class.replaceAll('_', ' '),
     });
   };
 
-  const switchFilter = switchesArr.filter((obj) => {
-    const switchIdFilter = idProduct.switches.map((arr) => {
-      if (arr.id == obj.id) {
-        return true;
-      }
-    });
-    return switchIdFilter.includes(true);
-  });
-
-  const fullItemSwitch = switchFilter.map((obj) => {
-    const fullItemSwitchSoldOut = idProduct.switches.map((arr) => {
-      if (arr.id == obj.id) {
-        const selectSwitch = sw.id !== obj.id ? '' : ' select';
-        return (
-          <div
-            onClick={() => onClickSwitch(obj, arr)}
-            key={obj.title}
-            className={
-              arr.soldout == 'false'
-                ? obj.class + ' switch_change' + selectSwitch
-                : obj.class + ' switch_change' + ' active' + selectSwitch
-            }>
-            {obj.title}
-          </div>
-        );
-      }
-    });
-
-    return fullItemSwitchSoldOut;
-  });
-
   const onClickAdditem = () => {
+    const switcher = sw.title == 'close' ? '' : sw.title;
     dispatch(
       setAddItem({
         id: id,
         title: idProduct.title,
         img: idProduct.imageUrl[0],
-        switchId: sw.id,
+        switch: switcher,
         price: idProduct.price,
       }),
     );
   };
-
-  const switchDesc = switchDescriptionArr.map((obj) => {
-    const fetchSwitchFilter = idProduct.switches.map((swarr) => {
-      if (swarr.soldout == 'true' && obj.id == swarr.id) {
-        return (
-          <div className="stock_button active" key={swarr.id}>
-            Нет в наличии
-          </div>
-        );
-      } else if (swarr.soldout == 'false' && obj.id == swarr.id) {
-        return (
-          <div className="stock_button" key={swarr.id}>
-            В наличии
-          </div>
-        );
-      }
-    });
-    if (sw.id == obj.id) {
-      return (
-        <div className="product_info_container" key={obj.img}>
-          <div className="product_info_title">{obj.title}</div>
-          {fetchSwitchFilter}
-          <div style={{ display: 'flex' }}>
-            <img
-              style={{ width: '15%', height: '15%', marginLeft: 15, marginTop: 15 }}
-              src={obj.img}
-            />
-            <div
-              className="product_info_desc_property"
-              style={{ fontSize: 13, marginLeft: 15, marginRight: 15 }}>
-              {Parser(obj.descProperty)}
-            </div>
-          </div>
-          <p style={{ fontSize: 15, marginLeft: 15, marginRight: 15 }}>{obj.description}</p>
-        </div>
-      );
-    }
-  });
+  console.log(cartItem);
   const img = idProduct.imageUrl.map((arr) => {
     return (
       <SwiperSlide key={arr}>
-        <img src={arr} />
+        <img src={arr} alt="img" />
       </SwiperSlide>
     );
   });
+
   return (
     <div className="fullprdouct_container">
       <div>
@@ -168,8 +102,6 @@ const FullItem = () => {
           style={{
             '--swiper-navigation-color': '#fff',
             '--swiper-pagination-color': '#fff',
-            width: 700,
-            height: 400,
           }}
           loop={true}
           spaceBetween={10}
@@ -180,7 +112,6 @@ const FullItem = () => {
           {img}
         </Swiper>
         <Swiper
-          style={{ width: 700, height: 100 }}
           onSwiper={setThumbsSwiper}
           loop={false}
           spaceBetween={10}
@@ -194,24 +125,18 @@ const FullItem = () => {
       </div>
       <div className="fullproduct_desccontainter">
         <div className="fullitem_tittle">{idProduct.title}</div>
-
-        <div className="fullitem_switch_container">{fullItemSwitch}</div>
-        {sw.id == 'close' ? (
-          <div className="fullitem_switch_info alert">Выберите тип переключателей !</div>
-        ) : (
-          <div className="fullitem_switch_info_container">
-            <div className="fullitem_switch_info">{switchDesc}</div>
-          </div>
+        {idProduct.switches && (
+          <FullItemSwitch sw={sw} onClickSwitch={onClickSwitch} idProduct={idProduct} />
         )}
-
-        {sw.soldout !== 'close' &&
-          (sw.soldout == 'true' ? (
-            <div className="fullitem_price soldout_button">Нет в наличии.</div>
-          ) : (
-            <div onClick={() => onClickAdditem()} className="fullitem_price">
-              {idProduct.price} p. В корзину
-            </div>
-          ))}
+        {sw.soldout == 'false' || !idProduct.switches ? (
+          <div onClick={() => onClickAdditem()} className="fullitem_price">
+            {idProduct.price} p. В корзину
+          </div>
+        ) : !idProduct.switches || sw.id !== 'close' ? (
+          <div className="fullitem_price soldout_button">Нет в наличии</div>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );

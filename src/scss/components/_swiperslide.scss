@@ -96,6 +96,10 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   margin-right: 120px;
   height: 400px;
   margin-top: 50px;
+  @media (max-width: 950px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   .swiper_slider {
     
     

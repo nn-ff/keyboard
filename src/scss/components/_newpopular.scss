@@ -24,6 +24,20 @@
   @media (max-width: 980px) {
     grid-template-columns: repeat(1, 1fr);
   }
+  @media (max-width: 570px) {
+    margin-left: 20px;
+  margin-right: 20px;
+  }
+  @media (max-width: 370px) {
+    grid-template-columns: repeat(1, 330px);
+    .switch_inner {
+      margin-left: 10px;
+      .switch_change {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
   .product_card {
     background-color: white;
     border-radius: 40px;
@@ -204,11 +218,25 @@
     max-height: 37px;
     &.active {
       max-height: 400px;
+      @media (max-width: 650px) {
+        max-height: 1000px;
+      }
     }
     .param_container {
       user-select: none;
       display: flex;
       justify-content: space-around;
+      @media (max-width: 650px) {
+        flex-direction: column;
+        align-content: center;
+    flex-wrap: wrap;
+        .filter_button {
+          margin: 10px auto;
+          
+          padding: 5px;
+        }
+      }
+    
     }
     .filter_title {
       width: fit-content;

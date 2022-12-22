@@ -3,6 +3,7 @@ import cl from './CartModal.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setVisibleCart } from '../../redux/slices/modalSlice';
 import NoItemsCart from '../cartUi/NoItemsCart';
+import ItemsCart from '../cartUi/ItemsCart';
 
 const CartModal = () => {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const CartModal = () => {
           height="30px">
           <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"></path>
         </svg>
-        {cartItem.length == 0 && <NoItemsCart />}
+        {cartItem.length == 0 ? <NoItemsCart /> : <ItemsCart />}
       </div>
     </div>
   );

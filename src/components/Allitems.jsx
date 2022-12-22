@@ -18,7 +18,7 @@ const Allitems = () => {
     { title: 'Xtrfy', param: 'xtrfy' },
     { title: 'Все мышки', param: 'Все мышки' },
   ];
-  // const detalisall = ['Переключатели', 'Стабилизаторы'];
+
   const board = boardall.map((arr) => {
     return (
       <div className="keyboards_items_item" key={arr}>
@@ -46,13 +46,7 @@ const Allitems = () => {
       </div>
     );
   });
-  // const detail = detalisall.map((arr) => {
-  //   return (
-  //     <div className="details_items_item" key={arr}>
-  //       {arr}
-  //     </div>
-  //   );
-  // });
+
   return (
     <div className="allitems_container">
       <div className="div1">
@@ -71,13 +65,14 @@ const Allitems = () => {
           </Link>
         </div>
       </div>
-      {/* <div className="div4">
-        <div className="allitems_title">Иснтрументы и детали</div>
-        <div className="details_items">{detail}</div>
-      </div> */}
+
       <div className="div5">
         <div className="allitems_title">Барахолка</div>
-        <div className="allitems_text">Проверенные товары со скидкой</div>
+        <div className="allitems_text">
+          <Link style={{ fontSize: 20 }} to="/discount">
+            Проверенные товары со скидкой
+          </Link>
+        </div>
       </div>
       <div className="div6">
         <div className="allitems_title">Мышки</div>

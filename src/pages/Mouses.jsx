@@ -43,7 +43,7 @@ const Mouses = () => {
       (wire ? obj.wire.includes(wire) : true)
     );
   });
-  console.log(FilterSearch);
+
   const product = FilterSearch.map((obj, id) => {
     return (
       <CSSTransition

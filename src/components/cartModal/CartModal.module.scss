@@ -27,7 +27,7 @@
 }
 
 .cartModel_content {
-  overflow: hidden;
+  overflow: auto;
   transition: all 300ms ease;
   background: #ffffff;
   width: 0;
@@ -37,7 +37,7 @@
     @media (max-width: 1800px) {
       width: 70%;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 930px) {
       width: 100%;
     }
   }
@@ -46,8 +46,7 @@
 .modal_reset_icon {
   margin-top: 5px;
   margin-bottom: 5px;
-  display: flex;
-  margin-left: auto;
+  float: right;
   cursor: pointer;
   opacity: 0.6;
   transition: all 400ms ease;

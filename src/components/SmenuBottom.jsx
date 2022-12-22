@@ -4,7 +4,7 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
-import { Pagination, Navigation, Autoplay } from 'swiper';
+import { Navigation } from 'swiper';
 const SmenuBottom = () => {
   const brandsitems = [
     {
@@ -52,8 +52,8 @@ const SmenuBottom = () => {
     return (
       <SwiperSlide key={obj.title}>
         <Link to={obj.link}>
-          <img src={obj.imgUrl.one} />
-          <img src={obj.imgUrl.two} />
+          <img src={obj.imgUrl.one} alt="img" />
+          <img src={obj.imgUrl.two} alt="img" />
         </Link>
       </SwiperSlide>
     );
@@ -61,7 +61,15 @@ const SmenuBottom = () => {
   return (
     <div className="swiper_container_bottom">
       <div className="swiper_slider">
-        <Swiper slidesPerView={3} navigation={true} modules={[Navigation]} className="mySwiper">
+        <Swiper
+          breakpoints={{
+            500: { slidesPerView: 1 },
+            1000: { slidesPerView: 2 },
+            1400: { slidesPerView: 3 },
+          }}
+          navigation={true}
+          modules={[Navigation]}
+          className="mySwiper">
           {brands}
         </Swiper>
       </div>
