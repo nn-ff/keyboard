@@ -86,7 +86,6 @@ const FullItem = () => {
       }),
     );
   };
-  console.log(cartItem);
   const img = idProduct.imageUrl.map((arr) => {
     return (
       <SwiperSlide key={arr}>

@@ -36,8 +36,6 @@ const Search = () => {
     );
   });
 
-  console.log(items);
-
   return (
     <div className="search_container">
       <div className="search_input_container">
