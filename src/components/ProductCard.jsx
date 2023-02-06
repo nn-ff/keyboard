@@ -17,7 +17,7 @@ const ProductCard = ({ title, imageUrl, price, id, switches, soldout, wire }) =>
       {wire == 'wireless' ? (
         <img
           className="product-card__bluetooth"
-          src="https://static.insales-cdn.com/assets/1/2180/3156100/1670604059/bluetooth.png"
+          src="https://static.insales-cdn.com/assets/1/2180/3156100/1675447228/bluetooth.png"
           alt="img"></img>
       ) : (
         ''
